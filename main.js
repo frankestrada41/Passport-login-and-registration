@@ -44,7 +44,6 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use((req, res, next) => {
-  console.log(req.body)
   next();
 });
 
@@ -73,7 +72,7 @@ app.post('/register', async (req, res) => {
       password: hashPassword,
       name,
     })
-    console.log(users)
+    console.log('REGISTER ROUTE: ', users)
     res.send('SUCCESFUL REGISTER')
   } catch (e) {
     console.log('THERE HAS BEEN AN ERROR IN REGISTER: ', e)

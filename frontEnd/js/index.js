@@ -71,7 +71,6 @@ const sendInpuText = () => {
       password,
     })
     if (isLogin) {
-      console.log('Login', body)
       serverResponse = await fetch('http://localhost:8000/login', {
         method: 'POST',
         headers: {
@@ -83,7 +82,6 @@ const sendInpuText = () => {
       changeURLRouter(routes['/welcomePage'].name)
     } else {
       const userName = document.getElementById("uName").value
-      console.log('HERE 0')
       serverResponse = await fetch('http://localhost:8000/register', {
         method: 'POST',
         headers: {
@@ -93,16 +91,5 @@ const sendInpuText = () => {
       fetchHTML("/")
       changeURLRouter(routes['/'].name)
     }
-    console.log(serverResponse)
   });
 }
-
-// const mainMenuButtonHandler = () => {
-//   if (window.location.href.includes('login') ||
-//     window.location.href.includes('index.html')) {
-//     console.log('ESCONDER LOGIN')
-//   }
-//   if (window.location.href.includes('register')) {
-//     console.log('ESCONDER REGISTER')
-//   }
-// }
